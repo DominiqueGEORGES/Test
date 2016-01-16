@@ -2,21 +2,62 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
-
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
-                }
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true"
+            }
+        },
+        "Ceci est du texte": {
+            "prototype": "digit/ui/text.reel",
+            "properties": {
+                "element": {"#": "Ceci est du texte"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
+                "value": "Text"
+            }
+        },
+        "rangeController": {
+            "prototype": "montage/core/range-controller",
+            "properties": {
+                "content": [
+                    "",
+                    ""
+                ],
+                "organizedContent": []
+            },
+            "_dev": {
+                "comment": "Barre de menu\n",
+                "isHidden": true
+            }
+        },
+        "Zone de texte mais longue": {
+            "prototype": "digit/ui/text-area.reel",
+            "properties": {
+                "element": {"#": "Zone de texte mais longue"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
+                "value": "Text"
             }
         }
+    }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        @Zone de texte mais longue
+        <p data-montage-id="Ceci est du texte"></p>
+        <textarea data-montage-id="Zone de texte mais longue"></textarea>
+    </div>
 </body>
 </html>
